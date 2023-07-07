@@ -38,7 +38,7 @@ body, html {
 }
 
 .pageHeader {
-    position: relative;
+  position: relative;
   padding: 0;
   margin: 0;
   font-weight: 300;
@@ -61,6 +61,24 @@ body, html {
     border-radius: 15%;
     padding: 2.5vh 1.5vh;
     background-color: rgba(255,255,255, 0.4);
+}
+
+.info-header h1 {
+  text-align:center;
+}
+.info-header h1:before {
+  left:50%; margin-left:-30px;
+}
+
+.info-header h1 span {
+  font-size: 2vh;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  line-height: 3em;
+  padding-left: 0.25em;
+  color: rgba(0, 0, 0, 0.4);
+  padding-bottom: 10px;
 }
 
 /* Font CSS */
@@ -88,24 +106,6 @@ h1 {
   }
 
 /* Header Style */
-
-.info-header h1 {
-    text-align:center;
-  }
-  .info-header h1:before {
-    left:50%; margin-left:-30px;
-  }
-
-  .info-header h1 span {
-    font-size: 2vh;
-    font-weight: 500;
-    text-transform: uppercase;
-    letter-spacing: 4px;
-    line-height: 3em;
-    padding-left: 0.25em;
-    color: rgba(0, 0, 0, 0.4);
-    padding-bottom: 10px;
-  }
 
 /* Loader */
 #loader{
