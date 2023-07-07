@@ -5,10 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Shinosan</title>
 
-    <!-- Mastodon Verify -->
-    <a style="visibility: hidden;" rel="me" href="https://mastodon.social/@shinosan">Mastodon</a>
-    <a style="visibility: hidden;" rel="me" href="https://mstdn.social/@shinosan">Mastodon</a>
-
     <!-- CSS *not counter-strike : source -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="styles.css">
@@ -19,24 +15,59 @@
     <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300&display=swap" rel="stylesheet">
 
     <!-- Icon -->
-    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
+    <script src="https://kit.fontawesome.com/75b539183b.js" crossorigin="anonymous"></script>
+
+    <!-- aos -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
+
+    <!-- Pre-Loader -->
+    <script src="script.js"></script>
 
 </head>
 
 
 <body >
-    <div class="bg-img"></div>
-    <div class="info">
-        <!-- Profile Picture -->
-        <img class="profilePic" src="https://media.discordapp.net/attachments/1126722545048109108/1126722619484422184/18_edit_by_felioz7707_ddszby4-pre.jpg?width=674&height=674">
+<div id="loader"></div>
+<div class="bg-img"></div>
+    <div class="homepage">
+            <div class="info" >
+                <!-- Profile Picture -->
+                <img class="profilePic" src="https://media.discordapp.net/attachments/1126722545048109108/1126722619484422184/18_edit_by_felioz7707_ddszby4-pre.jpg?width=674&height=674">
 
-        <!-- Your own fkn name -->
-        <div class="info-header">
-        <h1>Shinosan
-            <span>Streaming / Roleplaying</span>
-        </h1>
-        </div>
+                <!-- Your own fkn name -->
+                <div class="info-header" >
+                <h1>Shinosan
+                    <span>Streaming / Roleplaying</span>
+                </h1>
+                </div>
+
+                <!-- Social Media Icon -->
+                <div class="social-icon">
+                <a href="https://youtube.com/@Shinosanz" target="_blank"><i class="fa-brands fa-youtube fa-2xl" style="color: #ff0000;"></i></a>
+                <a href="https://www.facebook.com/shimoto.kayari/" target="_blank"> <i class="fa-brands fa-facebook fa-2xl" style="color: #005eff;"></i></a>
+                <a href="https://www.twitch.tv/shinosanz" target="_blank"><i class="fa-brands fa-twitch fa-2xl" style="color: #c800ff;"></i></a>
+                <a href="https://mstdn.social/@shinosan" target="_blank"><i class="fa-brands fa-mastodon fa-2xl" style="color: #9f1bd0;"></i></a>
+                </div>
+            </div>
     </div>
+
+
+<script>
+    var preloader = document.getElementById('loader');
+    function preLoaderHandler(){
+        preloader.style.display = 'none';
+    }
+  </script>
+
 </body>
-    
+<footer>
+        <!-- Mastodon Verify -->
+        <a style="visibility: hidden;" rel="me" href="https://mastodon.social/@shinosan">Mastodon</a>
+        <a style="visibility: hidden;" rel="me" href="https://mstdn.social/@shinosan">Mastodon</a>
+</footer>
 </html>
