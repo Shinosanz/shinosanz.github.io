@@ -123,6 +123,10 @@ h1 {
     position: absolute;
 }
 
+.info .form-control {
+  text-align:center
+}
+
 /* .info-header h1 {
     font-size:26px; 
     font-weight:700;  
