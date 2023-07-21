@@ -22,6 +22,8 @@
   padding-bottom: 5px;
 }
 
+
+/* Body */
 body, html {
     height: 100%;
     font-family: 'Kanit', sans-serif;
@@ -48,7 +50,7 @@ body, html {
 
 .info {
     background-color: rgb(0,0,0); /* Fallback color */
-    background-color: rgba(255,255,255, 0.3); /* Black w/opacity/see-through */
+    background-color: rgba(255,255,255, 0.8); /* Black w/opacity/see-through */
     color: white;
     font-weight: bold;
     border: 3px solid #f1f1f1;
@@ -141,7 +143,7 @@ h1 {
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-	z-index: 999;
+	z-index: 10000;
 }
 
 #loader h1 {
