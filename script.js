@@ -2,7 +2,6 @@
 
 var loader;
 
-setTimeout(() => { console.log("World!"); }, 5000);
 function loadNow(opacity) {
     if (opacity <= 0) {
         displayContent();
@@ -80,7 +79,7 @@ function convertToThai(input) {
       const char = input[i];
       output += englishToThaiMapping[char] || char;
     }
-  
+    document.getElementById("copy-button").style.visibility = 'visible';
     return output;
   }
   
@@ -97,3 +96,5 @@ function convertToThai(input) {
     // Display the translated text in the HTML
     translatedElement.textContent = translatedText;
   }
+
+// CopyText

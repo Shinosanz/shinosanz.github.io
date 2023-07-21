@@ -84,12 +84,15 @@
             </br>
             <form onsubmit="return false;">
               <label style="margin-bottom: 1em;font-size: 1.5em; color: #000000;">ใส่คำที่พิมพ์แล้วลืมเปลี่ยนภาษาลงไปเลยหนุ่ม</label>
-              <input class="form-control" id="changelang" name="changelang" value>
-              <button style="margin-top: 1em;" class="btn btn-success" onclick="translateAndDisplay()">Let's Go</button>
+              <div class="input-group mb-3">
+              <input class="form-control" id="changelang" name="changelang" style="margin-left:15%;" value>
+              <button class="btn btn-success" onclick="translateAndDisplay()" style="margin-right:15%;">Let's Go!</button>
+              </div>
             </form>
             <p style="color: #000000;margin: 1em; font-size: 3em;" id="translatedText"></p>
+            <button class="btn btn-outline-secondary" type="button" id="copy-button" onclick="copyFunc()" style="visibility:hidden;">Copy</button>
 
-            <p id="disclaimer" style="color: #000000;">This program is inspired from <a href="https://lullar-de-3.appspot.com/" target="_blank">Lullar's</a> "de = กำ" </p>
+            <p id="disclaimer" style="color: #000000; margin: 1em;">This program is inspired from <a href="https://lullar-de-3.appspot.com/" target="_blank">Lullar's</a> "de = กำ" </p>
             </div>
     </div>
 
@@ -103,6 +106,16 @@
 
 </body>
 <footer>
+  <script>
+    function copyFunc() {
+    // Get the text field
+    var copyText = document.getElementById("translatedText").innerHTML;
+  
+     // Copy the text inside the text field
+    navigator.clipboard.writeText(copyText);
+
+  }
+  </script>
         <!-- Mastodon Verify -->
         <a style="visibility: hidden;" rel="me" href="https://mastodon.social/@shinosan">Mastodon</a>
         <a style="visibility: hidden;" rel="me" href="https://mstdn.social/@shinosan">Mastodon</a>
