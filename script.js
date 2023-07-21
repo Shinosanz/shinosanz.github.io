@@ -98,3 +98,15 @@ function convertToThai(input) {
   }
 
 // CopyText
+function copyFunc() {
+    // Get the text field
+    var copyText = document.getElementById("translatedText").innerHTML;
+  
+     // Copy the text inside the text field
+    navigator.clipboard.writeText(copyText);
+
+  }
+
+  $(function() {
+    $('[data-bs-toggle="tooltip"]').tooltip();
+  });

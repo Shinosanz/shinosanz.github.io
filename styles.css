@@ -27,7 +27,6 @@
 body, html {
     height: 100%;
     font-family: 'Kanit', sans-serif;
-    overflow: hidden;
   }
 
 .bg-img {
@@ -137,10 +136,10 @@ h1 {
 
 /* Loader */
 #loader{
-	position: absolute;
+	position: fixed;
 	width: 100%;
 	height: 100vh;
-	background: #21242d url('assets/preloaderCat.gif') no-repeat center;
+	background: #21242d url('assets/preloaderCat.gif') no-repeat center center;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -149,10 +148,19 @@ h1 {
 
 #loader h1 {
     position: absolute;
+    top: 47%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #080808;
+    font-family: 'Kanit', sans-serif;
 }
 
 .info .form-control {
   text-align:center
+}
+
+#twitch-embed {
+  text-align: center;
 }
 
 /* .info-header h1 {
