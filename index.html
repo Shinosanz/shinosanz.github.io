@@ -54,14 +54,14 @@
               <li class="nav-item active">
                 <a class="nav-link" aria-current="page" href="index.html">Home</a>
               </li>
-              <li class="nav-item">
+              <!-- <li class="nav-item">
                 <a
                    class="nav-link"
                    href="https://www.youtube.com/channel/UC5CF7mLQZhvx8O5GODZAhdA"
                    rel="nofollow"
                    ></a
                   >
-              </li>
+              </li> -->
               <li class="nav-item">
                 <a
                    class="nav-link"
@@ -159,18 +159,27 @@
 
     <div id="twitch-embed"></div>
 
-    <!-- Load the Twitch embed JavaScript file -->
+    <!-- Load the Twitch embed script -->
     <script src="https://embed.twitch.tv/embed/v1.js"></script>
 
-    <!-- Create a Twitch.Embed object that will render within the "twitch-embed" element -->
+    <!-- Create a Twitch.Embed object that will render within the "twitch-embed" element. -->
     <script type="text/javascript">
-      new Twitch.Embed("twitch-embed", {
-        width: 1366,
+      var embed = new Twitch.Embed("twitch-embed", {
+        width: 1280,
         height: 768,
         channel: "shinosanz",
+        layout: "video",
+        autoplay: false,
         // Only needed if this page is going to be embedded on other websites
+        parent: ["embed.example.com", "othersite.example.com"]
+      });
+
+      embed.addEventListener(Twitch.Embed.VIDEO_READY, () => {
+        var player = embed.getPlayer();
+        player.play();
       });
     </script>
+
 
 <script>
     var preloader = document.getElementById('loader');
