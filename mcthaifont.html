@@ -1,0 +1,22 @@
+<html>
+<head>
+<title>Start Auto Download file</title>
+<script src="http://code.jquery.com/jquery-3.2.1.min.js"></script>
+<script>
+$(function() {
+$('a[data-auto-download]').each(function(){
+var $this = $(this);
+setTimeout(function() {
+window.location = $this.attr('href');
+}, 1000);
+});
+});
+</script>
+</head>
+<body>
+<div class="wrapper">
+<p>รอแป๊ปนึงไฟล์มันควรจะโหลดเองอะหนุ่ม แต่ถ้ามันไม่เด้งก็กด
+<a data-auto-download href="ThaiFontFix1.20.zip">ตรงนี้</a> เอาละกัน</p>
+</div>
+</body>
+</html>
