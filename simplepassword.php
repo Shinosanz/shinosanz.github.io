@@ -4,7 +4,7 @@
 
     if (empty($_COOKIE['password']) || $_COOKIE['password'] !== $password) {
         // Password not set or incorrect. Send to login.php.
-        header('Location: login.php');
+        header('Location: Operation_9Life.php');
         exit;
     }
 ?>

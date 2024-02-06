@@ -3,7 +3,7 @@
     $password = 'T3RR0RIZH3R3';
 
     /* Redirects here after login */
-    $redirect_after_login = 'gallery.html';
+    $redirect_after_login = 'assets/Important File.pdf';
 
     /* Will not ask password again for */
     $remember_password = strtotime('+30 days'); // 30 days
@@ -26,6 +26,8 @@
         font-size: 4vh;
         font-family: "Special Elite", system-ui;
         text-align: center;
+        align-content: center;
+        vertical-align: middle;
       }
     </style>
   </head>
