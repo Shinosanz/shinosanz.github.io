@@ -15,7 +15,6 @@ function loadNow(opacity) {
 
 function displayContent() {
     loader.style.display = 'none';
-    document.getElementById('homepage').style.display = 'block';
 }
 
 document.addEventListener("DOMContentLoaded", function() {

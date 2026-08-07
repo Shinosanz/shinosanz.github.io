@@ -3,14 +3,24 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Shinosan</title>
+    <title>Shinosan — Streaming / Roleplaying</title>
+
+    <!-- SEO / Social preview -->
+    <meta
+      name="description"
+      content="Shinosan — streamer and roleplayer. Find me on YouTube, Twitch, Discord and more."
+    />
+    <meta name="theme-color" content="#21242d" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Shinosan — Streaming / Roleplaying" />
+    <meta
+      property="og:description"
+      content="Streamer and roleplayer. Find me on YouTube, Twitch, Discord and more."
+    />
+    <meta property="og:image" content="assets/shinopfp.jpg" />
+    <meta name="twitter:card" content="summary" />
 
     <!-- CSS *not counter-strike : source -->
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
-      crossorigin="anonymous"
-    ></script>
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
       rel="stylesheet"
@@ -18,13 +28,12 @@
       crossorigin="anonymous"
     />
     <link rel="stylesheet" href="styles.css" />
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
 
     <!-- Font -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Kanit:wght@300&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;600;700&display=swap"
       rel="stylesheet"
     />
 
@@ -34,15 +43,24 @@
       src="https://kit.fontawesome.com/75b539183b.js"
       crossorigin="anonymous"
     ></script>
+  </head>
 
-    <!-- Scripts -->
-    <script src="script.js"></script>
+  <body>
+    <div id="loader"></div>
+    <div class="bg-img"></div>
 
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-brand fixed-top navbar-scroll">
       <div class="container-fluid">
+        <a class="navbar-brand cat-brand" href="./" aria-label="Home">
+          <svg viewBox="0 0 64 64" role="img" aria-label="Cat logo">
+            <path
+              d="M10 5 L26 22 C29 20 35 20 38 22 L54 5 C52 15 51 22 51 28 C51 41 43 51 32 51 C21 51 13 41 13 28 C13 22 12 15 10 5 Z"
+            />
+          </svg>
+        </a>
         <button
-          class="navbar-toggler ps-0"
+          class="navbar-toggler ms-auto pe-0"
           type="button"
           data-bs-toggle="collapse"
           data-bs-target="#navbarExample01"
@@ -60,43 +78,37 @@
               <a class="nav-link" aria-current="page" href="./">Home</a>
             </li>
             <li class="nav-item">
-              <p class="nav-link" href="./gallery"><del>My OC</del></p>
-            </li>
-            <li class="nav-item">
               <a class="nav-link" href="./convertThai">แปลงภาษา</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="./qrcode">QRCode</a>
             </li>
-            <a
-              style="visibility: hidden"
-              rel="me"
-              href="https://mastodon.social/@shinosan"
-              >Mastodon</a
-            >
-            <a
-              style="visibility: hidden"
-              rel="me"
-              href="https://mstdn.social/@shinosan"
-              >Mastodon</a
-            >
           </ul>
         </div>
       </div>
     </nav>
-  </head>
 
-  <body>
-    <div id="loader"></div>
-    <div class="bg-img"></div>
+    <!-- Hidden rel=me verification links (Mastodon) -->
+    <a class="visually-hidden" rel="me" href="https://mastodon.social/@shinosan"
+      >Mastodon</a
+    >
+    <a class="visually-hidden" rel="me" href="https://mstdn.social/@shinosan"
+      >Mastodon</a
+    >
 
     <!-- Main Component -->
-    <div class="homepage">
+    <main class="homepage">
       <div id="changeInfo" class="info">
         <!-- Profile Picture -->
-        <img class="profilePic" src="/assets/shinopfp.jpg" />
+        <img
+          class="profilePic"
+          src="assets/shinopfp.jpg"
+          alt="Shinosan profile picture"
+          width="240"
+          height="240"
+        />
 
-        <!-- Your own fkn name -->
+        <!-- Name + tagline -->
         <div class="info-header">
           <h1>
             Shinosan
@@ -104,38 +116,64 @@
           </h1>
         </div>
 
-        <!-- Social Media Icon -->
+        <!-- Social Media Icons -->
         <div class="social-icon">
-          <a href="https://youtube.com/@Shinosanz" target="_blank"
-            ><i class="fa-brands fa-youtube fa-2xl" style="color: #ff0000"></i
+          <a
+            href="https://youtube.com/@Shinosanz"
+            target="_blank"
+            rel="noopener"
+            aria-label="YouTube"
+            data-bs-toggle="tooltip"
+            title="YouTube"
+            ><i class="fa-brands fa-youtube fa-2xl"></i
           ></a>
-          <a href="https://www.facebook.com/shimoto.kayari/" target="_blank">
-            <i class="fa-brands fa-facebook fa-2xl" style="color: #005eff"></i
+          <a
+            href="https://www.facebook.com/shimoto.kayari/"
+            target="_blank"
+            rel="noopener"
+            aria-label="Facebook"
+            data-bs-toggle="tooltip"
+            title="Facebook"
+            ><i class="fa-brands fa-facebook fa-2xl"></i
           ></a>
-          <a href="https://www.twitch.tv/shinosanz" target="_blank"
-            ><i class="fa-brands fa-twitch fa-2xl" style="color: #c800ff"></i
+          <a
+            href="https://www.twitch.tv/shinosanz"
+            target="_blank"
+            rel="noopener"
+            aria-label="Twitch"
+            data-bs-toggle="tooltip"
+            title="Twitch"
+            ><i class="fa-brands fa-twitch fa-2xl"></i
           ></a>
-          <a href="https://mstdn.social/@shinosan" target="_blank"
-            ><i class="fa-brands fa-mastodon fa-2xl" style="color: #9f1bd0"></i
+          <a
+            href="https://mstdn.social/@shinosan"
+            target="_blank"
+            rel="me noopener"
+            aria-label="Mastodon"
+            data-bs-toggle="tooltip"
+            title="Mastodon"
+            ><i class="fa-brands fa-mastodon fa-2xl"></i
           ></a>
-          <a href="https://discord.com/invite/4NKy6DUNxS" target="_blank"
+          <a
+            href="https://discord.com/invite/4NKy6DUNxS"
+            target="_blank"
+            rel="noopener"
+            aria-label="Discord"
+            data-bs-toggle="tooltip"
+            title="Discord"
             ><i class="fa-brands fa-discord fa-2xl"></i
           ></a>
         </div>
       </div>
-    </div>
+    </main>
 
-    <!-- <div id="twitch-embed"></div> -->
-
-    <!-- <script src="https://embed.twitch.tv/embed/v1.js"></script>
-
-    <script type="text/javascript">
-      new Twitch.Embed("twitch-embed", {
-        width: 1280,
-        height: 720,
-        channel: "shinosanz",
-        parent: ["shinosan.me"]
-      });
-    </script> -->
+    <!-- Scripts -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+      crossorigin="anonymous"
+    ></script>
+    <script src="script.js"></script>
   </body>
 </html>

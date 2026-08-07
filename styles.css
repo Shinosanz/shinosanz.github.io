@@ -1,19 +1,73 @@
+/* Color theme — single light-blue accent */
+:root {
+  --accent: #38bdf8; /* light blue */
+  --accent-dark: #0ea5e9; /* deeper blue for hover */
+  --accent-soft: rgba(56, 189, 248, 0.35);
+  --text-light: #ffffff;
+  --text-muted: rgba(255, 255, 255, 0.75);
+  --card-bg: rgba(15, 26, 38, 0.6);
+  --card-border: rgba(56, 189, 248, 0.35);
+}
+
+/* Light-blue tint over the blurred background */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -4;
+  background-color: rgba(56, 189, 248, 0.28);
+  pointer-events: none;
+}
+
 /* Navbar */
+.cat-brand {
+  display: inline-flex;
+  align-items: center;
+  padding: 0;
+}
+
+.cat-brand svg {
+  width: 38px;
+  height: 38px;
+  fill: #ffffff;
+  filter: drop-shadow(0 1px 3px rgba(0, 0, 0, 0.45));
+  transition: transform 0.25s ease, fill 0.25s ease;
+}
+
+.cat-brand:hover svg,
+.cat-brand:focus-visible svg {
+  transform: scale(1.08) rotate(-4deg);
+  fill: var(--accent);
+}
+
+.navbar-scroll {
+  background-color: rgba(33, 36, 45, 0.35);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  transition: background-color 0.3s ease, padding 0.3s ease;
+}
+
 /* Color of the links BEFORE scroll */
 .navbar-scroll .nav-link,
 .navbar-scroll .navbar-toggler .fa-bars {
-  color: #4f4f4f;
+  color: #ffffff;
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
+
+.navbar-scroll .nav-link:hover:not(.disabled) {
+  color: var(--accent);
 }
 
 /* Color of the links AFTER scroll */
 .navbar-scrolled .nav-link,
 .navbar-scrolled .navbar-toggler .fa-bars {
-  color: #4f4f4f;
+  color: #ffffff;
 }
 
 /* Color of the navbar AFTER scroll */
 .navbar-scrolled {
-  background-color: #4f4f4f;
+  background-color: rgba(33, 36, 45, 0.85);
 }
 
 /* An optional height of the navbar AFTER scroll */
@@ -33,8 +87,17 @@ html {
   font-family: "Kanit", sans-serif;
 }
 
+/* Home page: flow-centered so the card never gets clipped */
+.homepage {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 96px 16px 48px;
+}
+
 .bg-img {
-  background-image: url(/assets/webbg.png);
+  background-image: url(assets/webbg.png);
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -50,25 +113,47 @@ html {
 
 .profilePic {
   border-radius: 50%;
-  border: 1rem solid white;
-  width: 30vh;
+  border: 6px solid rgba(255, 255, 255, 0.9);
+  width: 200px;
+  height: 200px;
+  max-width: 45vw;
+  max-height: 45vw;
+  object-fit: cover;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+.profilePic:hover {
+  transform: scale(1.05);
+  box-shadow: 0 14px 40px rgba(0, 0, 0, 0.45);
 }
 
 .info {
-  background-color: rgb(0, 0, 0); /* Fallback color */
-  background-color: rgba(255, 255, 255, 0.8); /* Black w/opacity/see-through */
-  color: white;
-  font-weight: bold;
-  border: 3px solid #f1f1f1;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  background-color: var(--card-bg);
+  -webkit-backdrop-filter: blur(16px) saturate(140%);
+  backdrop-filter: blur(16px) saturate(140%);
+  color: #ffffff;
+  border: 1px solid var(--card-border);
+  border-radius: 24px;
+  position: relative;
   z-index: 2;
-  width: 80%;
-  padding: 25px;
+  width: min(90%, 460px);
+  padding: 40px 30px 34px;
   text-align: center;
   align-items: center;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.35);
+  animation: infoFadeIn 0.7s ease both;
+}
+
+@keyframes infoFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .pageHeader {
@@ -84,35 +169,61 @@ html {
 }
 
 .social-icon {
-  display: block;
-  margin: auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 14px;
+  margin: 10px auto 0;
+}
+
+.social-icon a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 58px;
+  height: 58px;
+  border-radius: 16px;
+  color: #ffffff;
+  background-color: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  transition: transform 0.25s ease, background-color 0.25s ease,
+    box-shadow 0.25s ease, color 0.25s ease;
+}
+
+.social-icon a:hover,
+.social-icon a:focus-visible {
+  transform: translateY(-6px);
+  background-color: var(--accent);
+  color: #ffffff;
+  box-shadow: 0 10px 24px var(--accent-soft);
+  outline: none;
 }
 
 .social-icon i {
-  margin: 10px;
-  border: solid white;
-  border-radius: 15%;
-  padding: 2.5vh 1.5vh;
-  background-color: rgba(255, 255, 255, 0.4);
+  font-size: 1.6rem;
+}
+
+.info-header {
+  margin: 22px 0 26px;
 }
 
 .info-header h1 {
   text-align: center;
-}
-.info-header h1:before {
-  left: 50%;
-  margin-left: -30px;
+  font-weight: 700;
+  font-size: 2.4rem;
+  color: var(--accent);
+  text-shadow: 0 2px 12px rgba(56, 189, 248, 0.35);
 }
 
 .info-header h1 span {
-  font-size: 2vh;
+  display: block;
+  font-size: 0.8rem;
   font-weight: 500;
   text-transform: uppercase;
   letter-spacing: 4px;
-  line-height: 3em;
-  padding-left: 0.25em;
-  color: rgba(0, 0, 0, 0.4);
-  padding-bottom: 10px;
+  line-height: 2;
+  margin-top: 8px;
+  color: rgba(255, 255, 255, 0.75);
 }
 
 /* Font CSS */
@@ -151,6 +262,15 @@ h1 em {
   background-repeat: no-repeat;
   background-size: cover;
   z-index: 10000;
+  /* CSS fallback so the loader always clears even if JS fails */
+  animation: loaderHide 0.8s ease 0.6s forwards;
+}
+
+@keyframes loaderHide {
+  to {
+    opacity: 0;
+    visibility: hidden;
+  }
 }
 
 #loader h1 {
@@ -162,8 +282,102 @@ h1 em {
   font-family: "Kanit", sans-serif;
 }
 
+/* ---- Shared tool-page layout (convertThai, qrcode) ---- */
+
+/* Centers a card in the viewport using flow layout so tall
+   content scrolls instead of overflowing off screen. */
+.page-center {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 96px 16px 48px; /* top clears the fixed navbar */
+}
+
+/* Wider, non-absolute card variant for the tool pages */
+.info--wide {
+  position: static;
+  top: auto;
+  left: auto;
+  transform: none;
+  width: min(94%, 620px);
+  margin: 0 auto;
+  animation: toolFadeIn 0.6s ease both;
+}
+
+@keyframes toolFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Card text defaults to light so it reads on the dark glass */
+.info label,
+.info p,
+.info span {
+  color: var(--text-light);
+}
+
+.info .tool-title {
+  display: block;
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.info .tool-img {
+  width: 160px;
+  max-width: 45%;
+  height: auto;
+  margin: 0 auto 1rem;
+  display: block;
+}
+
 .info .form-control {
   text-align: center;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  background-color: rgba(255, 255, 255, 0.9);
+}
+
+.info .form-control:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 0.25rem var(--accent-soft);
+}
+
+.info .input-group {
+  max-width: 480px;
+  margin: 0 auto 1rem;
+}
+
+/* Light-blue button used across tool pages */
+.btn-accent {
+  background-color: var(--accent);
+  border: none;
+  color: #06283d;
+  font-weight: 600;
+  padding: 0.5rem 1.5rem;
+  transition: transform 0.2s ease, box-shadow 0.2s ease,
+    background-color 0.2s ease;
+}
+
+.btn-accent:hover,
+.btn-accent:focus {
+  color: #06283d;
+  background-color: var(--accent-dark);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 22px var(--accent-soft);
+}
+
+/* Result text on convertThai */
+#translatedText {
+  font-size: clamp(1.6rem, 6vw, 3rem);
+  word-break: break-word;
+  color: var(--accent) !important;
 }
 
 #twitch-embed {
@@ -171,113 +385,33 @@ h1 em {
 }
 
 /* Responsive Twitch */
-
 @media screen and (max-width: 762px) {
   #twitch-embed {
     display: none;
   }
 }
 
-/* Gallery */
-
-.hovereffect {
-  width: 100%;
-  height: 100%;
-  float: left;
-  overflow: hidden;
-  position: relative;
-  text-align: center;
-  cursor: default;
-  margin: 5px;
-}
-
-.hovereffect .overlay {
-  position: absolute;
-  overflow: hidden;
-  width: 80%;
-  height: 80%;
-  left: 10%;
-  top: 10%;
-  border-bottom: 1px solid #fff;
-  border-top: 1px solid #fff;
-  -webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
-  transition: opacity 0.35s, transform 0.35s;
-  -webkit-transform: scale(0, 1);
-  -ms-transform: scale(0, 1);
-  transform: scale(0, 1);
-}
-
-.hovereffect:hover .overlay {
-  opacity: 1;
-  filter: alpha(opacity=100);
-  -webkit-transform: scale(1);
-  -ms-transform: scale(1);
-  transform: scale(1);
-  overflow: scroll;
-}
-
-.hovereffect:hover .overlay::-webkit-scrollbar {
-  display: none;
-}
-
-.hovereffect img {
-  display: block;
-  position: relative;
-  -webkit-transition: all 0.35s;
-  transition: all 0.35s;
-  width: 100%;
-  border-radius: 10px;
-}
-
-.hovereffect:hover img {
-  filter: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg"><filter id="filter"><feComponentTransfer color-interpolation-filters="sRGB"><feFuncR type="linear" slope="0.6" /><feFuncG type="linear" slope="0.6" /><feFuncB type="linear" slope="0.6" /></feComponentTransfer></filter></svg>#filter');
-  filter: brightness(0.5);
-  -webkit-filter: brightness(0.5);
-}
-
-.hovereffect h2 {
-  text-transform: uppercase;
-  text-align: center;
-  position: relative;
-  font-size: 1.5em;
-  background-color: transparent;
-  color: #fff;
-  padding: 1em 0;
-  opacity: 0;
-  filter: alpha(opacity=0);
-  -webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
-  transition: opacity 0.35s, transform 0.35s;
-  -webkit-transform: translate3d(0, -100%, 0);
-  transform: translate3d(0, -100%, 0);
-}
-
-.hovereffect a,
-.hovereffect p {
-  color: #fff;
-  padding: 1em 0;
-  opacity: 0;
-  filter: alpha(opacity=0);
-  -webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
-  transition: opacity 0.35s, transform 0.35s;
-  -webkit-transform: translate3d(0, 100%, 0);
-  transform: translate3d(0, 100%, 0);
-}
-
-.hovereffect:hover a,
-.hovereffect:hover p,
-.hovereffect:hover h2 {
-  opacity: 1;
-  filter: alpha(opacity=100);
-  -webkit-transform: translate3d(0, 0, 0);
-  transform: translate3d(0, 0, 0);
-}
-
 #qrBox {
-  margin: 2em;
+  margin: 1.5em auto;
 }
 
 #qrText {
   margin-top: 1em;
+}
+
+/* Small-screen refinements */
+@media screen and (max-width: 576px) {
+  .info-header h1 {
+    font-size: 2rem;
+  }
+  .profilePic {
+    width: 160px;
+    height: 160px;
+  }
+  .social-icon a {
+    width: 52px;
+    height: 52px;
+  }
 }
 
 /* .info-header h1 {
