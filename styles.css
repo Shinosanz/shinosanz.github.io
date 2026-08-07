@@ -40,6 +40,20 @@ body::before {
   fill: var(--accent);
 }
 
+.menu-icon {
+  width: 28px;
+  height: 28px;
+  stroke: #ffffff;
+  stroke-width: 2.2;
+  stroke-linecap: round;
+  fill: none;
+  transition: stroke 0.2s ease;
+}
+
+.navbar-toggler:hover .menu-icon {
+  stroke: var(--accent);
+}
+
 .navbar-scroll {
   background-color: rgba(33, 36, 45, 0.35);
   -webkit-backdrop-filter: blur(10px);
