@@ -261,3 +261,26 @@ footer {
 }
 
 body { display: flex; flex-direction: column; }
+
+@media screen and (max-width: 768px) {
+  .nav { padding: 14px 20px; flex-wrap: wrap; gap: 10px; }
+  .nav-links { gap: 4px; }
+  .nav-link { padding: 6px 10px; font-size: 13px; }
+  .home-main, .tool-main { padding: 48px 16px; }
+}
+
+@media screen and (max-width: 576px) {
+  .home-content h1 { font-size: 28px; }
+  .tagline { font-size: 11px; letter-spacing: 2px; }
+  .profile-pic { width: 104px; height: 104px; }
+  .social-icons a { width: 44px; height: 44px; }
+  .social-icons { gap: 10px; }
+
+  .tool-card { padding: 28px 20px; }
+  .tool-title { font-size: 15px; }
+  .tool-row { flex-direction: column; }
+  .tool-row .btn-accent { width: 100%; }
+  .tool-img { width: 90px; }
+
+  .qr-box img { width: 140px; height: 140px; }
+}
