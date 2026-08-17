@@ -1,181 +1,57 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Shinosan — Streaming / Roleplaying</title>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Shinosan — Streaming / Roleplaying</title>
+<meta name="description" content="Shinosan — streamer and roleplayer. Find me on YouTube, Twitch, Discord and more.">
+<meta name="theme-color" content="#0b0e14">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<link rel="icon" type="image/x-icon" href="assets/favicon.ico">
+</head>
+<body>
 
-    <!-- SEO / Social preview -->
-    <meta
-      name="description"
-      content="Shinosan — streamer and roleplayer. Find me on YouTube, Twitch, Discord and more."
-    />
-    <meta name="theme-color" content="#21242d" />
-    <meta property="og:type" content="website" />
-    <meta property="og:title" content="Shinosan — Streaming / Roleplaying" />
-    <meta
-      property="og:description"
-      content="Streamer and roleplayer. Find me on YouTube, Twitch, Discord and more."
-    />
-    <meta property="og:image" content="assets/shinopfp.jpg" />
-    <meta name="twitter:card" content="summary" />
+<nav class="nav">
+  <a class="nav-brand" href="./" aria-label="Home">
+    <svg viewBox="0 0 100 100" width="28" height="28">
+      <path d="M21 3 C13 9 9 24 14 36 C9 42 4 44 6 49 C0 62 4 78 18 88 C28 95 40 97 50 97 C60 97 72 95 82 88 C96 78 100 62 94 49 C96 44 91 42 86 36 C91 24 88 9 79 3 C74 10 68 14 61 18 C55 14 46 14 40 18 C33 14 27 10 21 3 Z"></path>
+      <path d="M22 48 L40 56 L40 62 L24 58 Z" fill="#0b0e14"></path>
+      <path d="M78 48 L60 56 L60 62 L76 58 Z" fill="#0b0e14"></path>
+    </svg>
+    <span>Shinosan</span>
+  </a>
+  <div class="nav-links">
+    <a class="nav-link active" href="./" aria-current="page">Home</a>
+    <a class="nav-link" href="./convertThai">แปลงภาษา</a>
+    <a class="nav-link" href="./qrcode">QR Code</a>
+  </div>
+</nav>
 
-    <!-- CSS *not counter-strike : source -->
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
-      crossorigin="anonymous"
-    />
-    <link rel="stylesheet" href="styles.css" />
+<a class="visually-hidden" rel="me" href="https://mastodon.social/@shinosan" style="position:absolute; left:-9999px;">Mastodon</a>
+<a class="visually-hidden" rel="me" href="https://mstdn.social/@shinosan" style="position:absolute; left:-9999px;">Mastodon</a>
 
-    <!-- Font -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;600;700&display=swap"
-      rel="stylesheet"
-    />
+<main class="home-main">
+  <div class="home-bg"></div>
+  <div class="home-content">
+    <img class="profile-pic" src="assets/shinopfp.jpg" alt="Shinosan profile picture" width="132" height="132">
+    <h1>Shinosan</h1>
+    <div class="tagline">Streaming / Roleplaying</div>
 
-    <!-- Icon -->
-    <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
-    <script
-      src="https://kit.fontawesome.com/75b539183b.js"
-      crossorigin="anonymous"
-    ></script>
-  </head>
+    <div class="social-icons">
+      <a href="https://youtube.com/@Shinosanz" target="_blank" rel="noopener" aria-label="YouTube"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.6A3 3 0 0 0 .5 6.2 31 31 0 0 0 0 12a31 31 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.9.6 9.4.6 9.4.6s7.5 0 9.4-.6a3 3 0 0 0 2.1-2.1A31 31 0 0 0 24 12a31 31 0 0 0-.5-5.8ZM9.6 15.5V8.5L15.8 12Z"></path></svg></a>
+      <a href="https://www.facebook.com/shimoto.kayari/" target="_blank" rel="noopener" aria-label="Facebook"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M22 12a10 10 0 1 0-11.6 9.9v-7H7.9V12h2.5V9.8c0-2.5 1.5-3.9 3.8-3.9 1.1 0 2.2.2 2.2.2v2.5h-1.3c-1.2 0-1.6.8-1.6 1.6V12h2.8l-.4 2.9h-2.4v7A10 10 0 0 0 22 12Z"></path></svg></a>
+      <a href="https://www.twitch.tv/shinosanz" target="_blank" rel="noopener" aria-label="Twitch"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M4 2 2 6.5v13.7h5.4V23l3.6-2.8h4L21.5 14V2ZM19.7 13l-3 3h-3.6l-2.6 2v-2H7V3.8h12.7Z"></path><path d="M16.4 6.9h1.8v5.4h-1.8Zm-4.9 0h1.8v5.4h-1.8Z"></path></svg></a>
+      <a href="https://mstdn.social/@shinosan" target="_blank" rel="me noopener" aria-label="Mastodon"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M21.3 6.7c-.3-2.3-2.3-4.1-4.6-4.5-2-.3-4-.5-6.1-.5s-4.1.2-6.1.5C2.2 2.6.2 4.4 0 6.7c-.2 2.1-.3 4.2-.1 6.3.3 3.1 3 5.4 6.1 5.6.9.1 1.7.1 2.6.1l-.2 2.9 3.2-2.9c1.6 0 3.1-.1 4.6-.4 2.9-.5 5.1-2.7 5.4-5.7.2-2.1.1-4.2-.1-6.3ZM17.9 14h-2.3V8.6c0-1.1-.5-1.7-1.4-1.7-1 0-1.5.6-1.5 1.9v2.7h-2.3V8.8c0-1.3-.5-1.9-1.5-1.9-.9 0-1.4.6-1.4 1.7V14H5.2V8.4c0-1.1.3-2 .9-2.6.6-.7 1.4-1 2.4-1 1.2 0 2.1.5 2.7 1.4l.6.9.6-.9c.6-.9 1.5-1.4 2.7-1.4 1 0 1.8.3 2.4 1 .6.6.9 1.5.9 2.6Z"></path></svg></a>
+      <a href="https://discord.com/invite/4NKy6DUNxS" target="_blank" rel="noopener" aria-label="Discord"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M20.3 4.4A19.8 19.8 0 0 0 15.3 3l-.3.5c1.8.4 2.9.9 4 1.6a13.7 13.7 0 0 0-11.9 0c1.1-.7 2.2-1.2 4-1.6L10.8 3a19.8 19.8 0 0 0-5 1.4C2.7 8.3 1.9 12.1 2.3 15.8a20 20 0 0 0 6 3l1-1.5c-.9-.3-1.7-.7-2.4-1.2l.4-.3c3.4 1.6 7.1 1.6 10.5 0l.4.3c-.7.5-1.5.9-2.4 1.2l1 1.5c1.7-.5 3.6-1.4 5.9-3 .5-4.5-.7-8.2-3-11.4ZM9 13.7c-1 0-1.8-.9-1.8-2s.8-2 1.8-2 1.9.9 1.8 2c0 1.1-.8 2-1.8 2Zm6 0c-1 0-1.8-.9-1.8-2s.8-2 1.8-2 1.9.9 1.8 2c0 1.1-.8 2-1.8 2Z"></path></svg></a>
+    </div>
+  </div>
+</main>
 
-  <body>
-    <div id="loader"></div>
-    <div class="bg-img"></div>
+<footer>&copy; 2026 Shinosan. All rights reserved.</footer>
 
-    <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-brand fixed-top navbar-scroll">
-      <div class="container-fluid">
-        <a class="navbar-brand cat-brand" href="./" aria-label="Home">
-          <svg viewBox="0 0 64 64" role="img" aria-label="Cat logo">
-            <path
-              d="M10 5 L26 22 C29 20 35 20 38 22 L54 5 C52 15 51 22 51 28 C51 41 43 51 32 51 C21 51 13 41 13 28 C13 22 12 15 10 5 Z"
-            />
-          </svg>
-        </a>
-        <button
-          class="navbar-toggler ms-auto pe-0"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#navbarExample01"
-          aria-controls="navbarExample01"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
-          <span class="d-flex justify-content-start align-items-center">
-            <svg class="menu-icon" viewBox="0 0 24 24" aria-hidden="true">
-              <path d="M3 6h18M3 12h18M3 18h18" />
-            </svg>
-          </span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarExample01">
-          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-            <li class="nav-item active">
-              <a class="nav-link" aria-current="page" href="./">Home</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="./convertThai">แปลงภาษา</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="./qrcode">QRCode</a>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </nav>
-
-    <!-- Hidden rel=me verification links (Mastodon) -->
-    <a class="visually-hidden" rel="me" href="https://mastodon.social/@shinosan"
-      >Mastodon</a
-    >
-    <a class="visually-hidden" rel="me" href="https://mstdn.social/@shinosan"
-      >Mastodon</a
-    >
-
-    <!-- Main Component -->
-    <main class="homepage">
-      <div id="changeInfo" class="info">
-        <!-- Profile Picture -->
-        <img
-          class="profilePic"
-          src="assets/shinopfp.jpg"
-          alt="Shinosan profile picture"
-          width="240"
-          height="240"
-        />
-
-        <!-- Name + tagline -->
-        <div class="info-header">
-          <h1>
-            Shinosan
-            <span>Streaming / Roleplaying</span>
-          </h1>
-        </div>
-
-        <!-- Social Media Icons -->
-        <div class="social-icon">
-          <a
-            href="https://youtube.com/@Shinosanz"
-            target="_blank"
-            rel="noopener"
-            aria-label="YouTube"
-            data-bs-toggle="tooltip"
-            title="YouTube"
-            ><i class="fa-brands fa-youtube fa-2xl"></i
-          ></a>
-          <a
-            href="https://www.facebook.com/shimoto.kayari/"
-            target="_blank"
-            rel="noopener"
-            aria-label="Facebook"
-            data-bs-toggle="tooltip"
-            title="Facebook"
-            ><i class="fa-brands fa-facebook fa-2xl"></i
-          ></a>
-          <a
-            href="https://www.twitch.tv/shinosanz"
-            target="_blank"
-            rel="noopener"
-            aria-label="Twitch"
-            data-bs-toggle="tooltip"
-            title="Twitch"
-            ><i class="fa-brands fa-twitch fa-2xl"></i
-          ></a>
-          <a
-            href="https://mstdn.social/@shinosan"
-            target="_blank"
-            rel="me noopener"
-            aria-label="Mastodon"
-            data-bs-toggle="tooltip"
-            title="Mastodon"
-            ><i class="fa-brands fa-mastodon fa-2xl"></i
-          ></a>
-          <a
-            href="https://discord.com/invite/4NKy6DUNxS"
-            target="_blank"
-            rel="noopener"
-            aria-label="Discord"
-            data-bs-toggle="tooltip"
-            title="Discord"
-            ><i class="fa-brands fa-discord fa-2xl"></i
-          ></a>
-        </div>
-      </div>
-    </main>
-
-    <!-- Scripts -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
-      crossorigin="anonymous"
-    ></script>
-    <script src="script.js"></script>
-  </body>
+<script src="script.js"></script>
+</body>
 </html>

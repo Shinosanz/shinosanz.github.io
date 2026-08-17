@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<template id="__bundler_thumbnail"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200"><rect width="200" height="200" fill="#0b0e14"/><circle cx="100" cy="80" r="35" fill="#38bdf8"/><text x="100" y="150" font-size="24" fill="#fff" text-anchor="middle" font-family="sans-serif">S</text></svg></template>
+<helmet>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    body { margin: 0; background: #0b0e14; }
+    * { box-sizing: border-box; }
+    ::selection { background: rgba(56,189,248,0.35); }
+    a { color: #38bdf8; }
+    a:hover { color: #7dd3fc; }
+    input::placeholder { color: rgba(255,255,255,0.35); }
+  </style>
+</helmet>
+
+<div style="font-family:'Kanit',sans-serif; background:#0b0e14; min-height:100vh; color:#ffffff; display:flex; flex-direction:column;">
+
+  <!-- Nav -->
+  <nav style="position:sticky; top:0; z-index:20; display:flex; align-items:center; justify-content:space-between; padding:20px 40px; border-bottom:1px solid rgba(255,255,255,0.08); background:rgba(11,14,20,0.85); backdrop-filter:blur(6px);">
+    <div onClick="{{ goHome }}" style="display:flex; align-items:center; gap:10px; cursor:pointer;">
+      <svg viewBox="0 0 100 100" width="28" height="28" style="fill:#ffffff;">
+        <path d="M21 3 C13 9 9 24 14 36 C9 42 4 44 6 49 C0 62 4 78 18 88 C28 95 40 97 50 97 C60 97 72 95 82 88 C96 78 100 62 94 49 C96 44 91 42 86 36 C91 24 88 9 79 3 C74 10 68 14 61 18 C55 14 46 14 40 18 C33 14 27 10 21 3 Z"></path>
+        <path d="M22 48 L40 56 L40 62 L24 58 Z" fill="#0b0e14"></path>
+        <path d="M78 48 L60 56 L60 62 L76 58 Z" fill="#0b0e14"></path>
+      </svg>
+      <span style="font-weight:600; font-size:17px; letter-spacing:0.3px;">Shinosan</span>
+    </div>
+    <div style="display:flex; gap:8px;">
+      <div onClick="{{ goHome }}" style="{{ navStyle_home }}">Home</div>
+      <div onClick="{{ goThai }}" style="{{ navStyle_thai }}">แปลงภาษา</div>
+      <div onClick="{{ goQr }}" style="{{ navStyle_qr }}">QR Code</div>
+    </div>
+  </nav>
+
+  <!-- HOME -->
+  <sc-if value="{{ isHome }}" hint-placeholder-val="{{ true }}">
+    <main style="flex:1; display:flex; align-items:center; justify-content:center; padding:80px 24px; position:relative; overflow:hidden;">
+      <div style="position:absolute; inset:0; background-image:linear-gradient(rgba(4,6,10,0.7),rgba(4,6,10,0.85)), url('https://raw.githubusercontent.com/Shinosanz/shinosanz.github.io/main/assets/webbg.png'); background-size:cover; background-position:center; filter:blur(8px); transform:scale(1.05);"></div>
+      <div style="width:min(92%,480px); text-align:center; position:relative; z-index:1;">
+        <img src="https://raw.githubusercontent.com/Shinosanz/shinosanz.github.io/main/assets/shinopfp.jpg" alt="Shinosan profile picture" style="width:132px; height:132px; border-radius:50%; object-fit:cover; border:1px solid rgba(255,255,255,0.12); box-shadow:0 20px 50px rgba(56,189,248,0.15);" />
+
+        <h1 style="margin:28px 0 6px; font-size:36px; font-weight:600; letter-spacing:0.3px;">Shinosan</h1>
+        <div style="font-size:13px; font-weight:400; text-transform:uppercase; letter-spacing:3px; color:rgba(255,255,255,0.45);">Streaming / Roleplaying</div>
+
+        <div style="display:flex; justify-content:center; gap:12px; margin-top:36px; flex-wrap:wrap;">
+          <a href="https://youtube.com/@Shinosanz" target="_blank" rel="noopener" aria-label="YouTube" style="{{ iconStyle }}"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.6A3 3 0 0 0 .5 6.2 31 31 0 0 0 0 12a31 31 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.9.6 9.4.6 9.4.6s7.5 0 9.4-.6a3 3 0 0 0 2.1-2.1A31 31 0 0 0 24 12a31 31 0 0 0-.5-5.8ZM9.6 15.5V8.5L15.8 12Z"></path></svg></a>
+          <a href="https://www.facebook.com/shimoto.kayari/" target="_blank" rel="noopener" aria-label="Facebook" style="{{ iconStyle }}"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M22 12a10 10 0 1 0-11.6 9.9v-7H7.9V12h2.5V9.8c0-2.5 1.5-3.9 3.8-3.9 1.1 0 2.2.2 2.2.2v2.5h-1.3c-1.2 0-1.6.8-1.6 1.6V12h2.8l-.4 2.9h-2.4v7A10 10 0 0 0 22 12Z"></path></svg></a>
+          <a href="https://www.twitch.tv/shinosanz" target="_blank" rel="noopener" aria-label="Twitch" style="{{ iconStyle }}"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M4 2 2 6.5v13.7h5.4V23l3.6-2.8h4L21.5 14V2ZM19.7 13l-3 3h-3.6l-2.6 2v-2H7V3.8h12.7Z"></path><path d="M16.4 6.9h1.8v5.4h-1.8Zm-4.9 0h1.8v5.4h-1.8Z"></path></svg></a>
+          <a href="https://mstdn.social/@shinosan" target="_blank" rel="me noopener" aria-label="Mastodon" style="{{ iconStyle }}"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M21.3 6.7c-.3-2.3-2.3-4.1-4.6-4.5-2-.3-4-.5-6.1-.5s-4.1.2-6.1.5C2.2 2.6.2 4.4 0 6.7c-.2 2.1-.3 4.2-.1 6.3.3 3.1 3 5.4 6.1 5.6.9.1 1.7.1 2.6.1l-.2 2.9 3.2-2.9c1.6 0 3.1-.1 4.6-.4 2.9-.5 5.1-2.7 5.4-5.7.2-2.1.1-4.2-.1-6.3ZM17.9 14h-2.3V8.6c0-1.1-.5-1.7-1.4-1.7-1 0-1.5.6-1.5 1.9v2.7h-2.3V8.8c0-1.3-.5-1.9-1.5-1.9-.9 0-1.4.6-1.4 1.7V14H5.2V8.4c0-1.1.3-2 .9-2.6.6-.7 1.4-1 2.4-1 1.2 0 2.1.5 2.7 1.4l.6.9.6-.9c.6-.9 1.5-1.4 2.7-1.4 1 0 1.8.3 2.4 1 .6.6.9 1.5.9 2.6Z"></path></svg></a>
+          <a href="https://discord.com/invite/4NKy6DUNxS" target="_blank" rel="noopener" aria-label="Discord" style="{{ iconStyle }}"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M20.3 4.4A19.8 19.8 0 0 0 15.3 3l-.3.5c1.8.4 2.9.9 4 1.6a13.7 13.7 0 0 0-11.9 0c1.1-.7 2.2-1.2 4-1.6L10.8 3a19.8 19.8 0 0 0-5 1.4C2.7 8.3 1.9 12.1 2.3 15.8a20 20 0 0 0 6 3l1-1.5c-.9-.3-1.7-.7-2.4-1.2l.4-.3c3.4 1.6 7.1 1.6 10.5 0l.4.3c-.7.5-1.5.9-2.4 1.2l1 1.5c1.7-.5 3.6-1.4 5.9-3 .5-4.5-.7-8.2-3-11.4ZM9 13.7c-1 0-1.8-.9-1.8-2s.8-2 1.8-2 1.9.9 1.8 2c0 1.1-.8 2-1.8 2Zm6 0c-1 0-1.8-.9-1.8-2s.8-2 1.8-2 1.9.9 1.8 2c0 1.1-.8 2-1.8 2Z"></path></svg></a>
+        </div>
+      </div>
+    </main>
+  </sc-if>
+
+  <!-- CONVERT THAI -->
+  <sc-if value="{{ isThai }}" hint-placeholder-val="{{ false }}">
+    <main style="flex:1; display:flex; align-items:center; justify-content:center; padding:80px 24px;">
+      <div style="width:min(94%,560px); background:#11151f; border:1px solid rgba(255,255,255,0.08); border-radius:16px; padding:40px 32px; text-align:center;">
+        <img src="https://raw.githubusercontent.com/Shinosanz/shinosanz.github.io/main/assets/PityShino.png" alt="Shino mascot" style="width:110px; height:auto; margin:0 auto 20px; display:block; border-radius:8px;" />
+
+        <label for="thaiInput" style="display:block; font-size:17px; font-weight:500; margin-bottom:18px; color:rgba(255,255,255,0.9);">ใส่คำที่พิมพ์แล้วลืมเปลี่ยนภาษาลงไปเลยหนุ่ม</label>
+
+        <div style="display:flex; gap:8px; margin-bottom:20px;">
+          <input id="thaiInput" value="{{ thaiInput }}" onChange="{{ onThaiInput }}" onKeyDown="{{ onThaiKeyDown }}" style="flex:1; padding:12px 16px; border-radius:10px; border:1px solid rgba(255,255,255,0.15); background:#0b0e14; color:#fff; font-family:'Kanit',sans-serif; font-size:15px; outline:none;" />
+          <button onClick="{{ translateThai }}" style="{{ btnStyle }}">Let's Go!</button>
+        </div>
+
+        <p style="min-height:48px; font-size:clamp(1.5rem,6vw,2.4rem); color:#38bdf8; word-break:break-word; margin:8px 0 20px;">{{ thaiOutput }}</p>
+
+        <sc-if value="{{ showCopy }}" hint-placeholder-val="{{ false }}">
+          <button onClick="{{ copyThai }}" style="background:transparent; border:1px solid rgba(255,255,255,0.25); color:#fff; padding:8px 20px; border-radius:8px; font-family:'Kanit',sans-serif; cursor:pointer;">{{ copyLabel }}</button>
+        </sc-if>
+
+        <p style="margin-top:24px; font-size:13px; color:rgba(255,255,255,0.4);">This program is inspired from <a href="https://lullar-de-3.appspot.com/" target="_blank" rel="noopener">Lullar's</a> "de = กำ"</p>
+      </div>
+    </main>
+  </sc-if>
+
+  <!-- QR CODE -->
+  <sc-if value="{{ isQr }}" hint-placeholder-val="{{ false }}">
+    <main style="flex:1; display:flex; align-items:center; justify-content:center; padding:80px 24px;">
+      <div style="width:min(94%,480px); background:#11151f; border:1px solid rgba(255,255,255,0.08); border-radius:16px; padding:40px 32px; text-align:center;">
+        <label for="qrInput" style="display:block; font-size:17px; font-weight:500; margin-bottom:18px;">ใส่ลิ้งเข้าไปเลยลูก</label>
+        <input id="qrInput" value="{{ qrInput }}" onChange="{{ onQrInput }}" onKeyDown="{{ onQrKeyDown }}" placeholder="ลิ้งอะลูก ลิ้ง" style="width:100%; padding:12px 16px; border-radius:10px; border:1px solid rgba(255,255,255,0.15); background:#0b0e14; color:#fff; font-family:'Kanit',sans-serif; font-size:15px; outline:none; margin-bottom:24px;" />
+
+        <div style="background:#fff; border-radius:12px; padding:16px; display:inline-block;">
+          <img src="{{ qrSrc }}" alt="Generated QR code" width="180" height="180" style="display:block;" />
+        </div>
+
+        <div style="margin-top:24px;">
+          <button onClick="{{ generateQr }}" style="{{ btnStyle }}">Generate</button>
+        </div>
+      </div>
+    </main>
+  </sc-if>
+
+  <footer style="padding:24px 40px; text-align:center; font-size:12px; color:rgba(255,255,255,0.3); border-top:1px solid rgba(255,255,255,0.06);">shinosan.me — redesign concept</footer>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+const THAI_MAP = {
+  '1':'ๅ','!':'+','2':'/','@':'๑','3':'-','#':'๒','4':'ภ','$':'๓','5':'ถ','%':'๔',
+  '6':'ุ','^':'ู','7':'ึ','&':'฿','8':'ค','*':'๕','9':'ต','(':'๖','0':'จ',')':'๗',
+  '-':'ข','_':'๘','=':'ช','+':'๙','q':'ๆ','Q':'๐','w':'ไ','W':'"','e':'ำ','E':'ฎ',
+  'r':'พ','R':'ฑ','t':'ะ','T':'ธ','y':'ั','Y':'ํ','u':'ี','U':'๊','i':'ร','I':'ณ',
+  'o':'น','O':'ฯ','p':'ย','P':'ญ','[':'บ',']':'ล','a':'ฟ','A':'ฤ','s':'ห','S':'ฆ',
+  'd':'ก','D':'ฏ','f':'ด','F':'โ','g':'เ','G':'ฌ','h':'้','H':'็','j':'่','J':'๋',
+  'k':'า','K':'ษ','l':'ส','L':'ศ',';':'ว',':':'ซ','\'':'ง','"':'.', 'z':'ผ','Z':'ฉ',
+  'x':'ป','X':'ฮ','c':'แ','C':'ฺ','v':'อ','V':'์','b':'ิ','B':'ฒ','n':'ื','N':'ฬ',
+  'm':'ท','M':'ฦ',',':'ม','<':'ฒ','.':'ใ','>':'ฬ','/':'ฝ','?':'ฦ'
+};
+
+class Component extends DCLogic {
+  state = {
+    view: 'home',
+    thaiInput: '',
+    thaiOutput: '',
+    showCopy: false,
+    copyLabel: 'Copy',
+    qrInput: '',
+    qrSrc: 'https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=https://www.youtube.com/watch?v=dQw4w9WgXcQ'
+  };
+
+  convertToThai(input) {
+    let out = '';
+    for (const ch of input) out += THAI_MAP[ch] || ch;
+    return out;
+  }
+
+  renderVals() {
+    const navBase = { padding: '8px 16px', borderRadius: '8px', cursor: 'pointer', fontSize: '14px', fontWeight: 500, transition: 'background 0.2s ease, color 0.2s ease' };
+    const navOn = { ...navBase, background: 'rgba(56,189,248,0.15)', color: '#38bdf8' };
+    const navOff = { ...navBase, color: 'rgba(255,255,255,0.65)' };
+
+    return {
+      isHome: this.state.view === 'home',
+      isThai: this.state.view === 'thai',
+      isQr: this.state.view === 'qr',
+      goHome: () => this.setState({ view: 'home' }),
+      goThai: () => this.setState({ view: 'thai' }),
+      goQr: () => this.setState({ view: 'qr' }),
+      navStyle_home: this.state.view === 'home' ? navOn : navOff,
+      navStyle_thai: this.state.view === 'thai' ? navOn : navOff,
+      navStyle_qr: this.state.view === 'qr' ? navOn : navOff,
+      iconStyle: { display: 'flex', alignItems: 'center', justifyContent: 'center', width: '48px', height: '48px', borderRadius: '12px', background: 'rgba(255,255,255,0.06)', border: '1px solid rgba(255,255,255,0.1)', color: '#fff', transition: 'transform 0.2s ease, background 0.2s ease' },
+      btnStyle: { background: '#38bdf8', color: '#06283d', border: 'none', padding: '12px 22px', borderRadius: '10px', fontFamily: "'Kanit',sans-serif", fontWeight: 600, fontSize: '15px', cursor: 'pointer', whiteSpace: 'nowrap' },
+
+      thaiInput: this.state.thaiInput,
+      thaiOutput: this.state.thaiOutput,
+      showCopy: this.state.showCopy,
+      copyLabel: this.state.copyLabel,
+      onThaiInput: (e) => this.setState({ thaiInput: e.target.value }),
+      onThaiKeyDown: (e) => { if (e.key === 'Enter') this.translateThaiNow(); },
+      translateThai: () => this.translateThaiNow(),
+      copyThai: () => {
+        navigator.clipboard.writeText(this.state.thaiOutput);
+        this.setState({ copyLabel: 'Copied!' });
+        setTimeout(() => this.setState({ copyLabel: 'Copy' }), 1200);
+      },
+
+      qrInput: this.state.qrInput,
+      qrSrc: this.state.qrSrc,
+      onQrInput: (e) => this.setState({ qrInput: e.target.value }),
+      onQrKeyDown: (e) => { if (e.key === 'Enter') this.generateQrNow(); },
+      generateQr: () => this.generateQrNow()
+    };
+  }
+
+  translateThaiNow() {
+    const out = this.convertToThai(this.state.thaiInput);
+    this.setState({ thaiOutput: out, showCopy: out.length > 0 });
+  }
+
+  generateQrNow() {
+    if (this.state.qrInput.trim().length === 0) return;
+    this.setState({ qrSrc: 'https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=' + encodeURIComponent(this.state.qrInput) });
+  }
+}
+</script>
+</body>
+</html>
