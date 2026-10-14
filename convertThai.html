@@ -37,8 +37,8 @@
     <form onsubmit="return false;">
       <label for="changelang" class="tool-title">ใส่คำที่พิมพ์แล้วลืมเปลี่ยนภาษาลงไปเลยหนุ่ม</label>
       <div class="tool-row">
-        <input class="tool-input" id="changelang" name="changelang">
-        <button class="btn-accent" type="submit" onclick="translateAndDisplay()">Let's Go!</button>
+        <input class="tool-input" id="changelang" name="changelang" autocomplete="off">
+        <button class="btn-accent" type="button" id="swap-button" onclick="toggleDirection()" aria-label="สลับทิศทางการแปลง">EN → TH</button>
       </div>
     </form>
 
