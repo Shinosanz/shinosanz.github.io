@@ -37,15 +37,14 @@
     <form onsubmit="return false;">
       <label for="changelang" class="tool-title">ใส่คำที่พิมพ์แล้วลืมเปลี่ยนภาษาลงไปเลยหนุ่ม</label>
       <div class="tool-row">
-        <input class="tool-input" id="changelang" name="changelang" autocomplete="off">
-        <button class="btn-accent" type="button" id="swap-button" onclick="toggleDirection()" aria-label="สลับทิศทางการแปลง">EN → TH</button>
-      </div>
+        <input class="tool-input" id="changelang" name="changelang" autocomplete="off">      </div>
     </form>
 
     <p id="translatedText"></p>
 
     <button class="btn-outline" type="button" id="copy-button" onclick="copyFunc()" title="คลิกหนูเบาๆทีนึงพอ">Copy</button>
 
+    <p class="disclaimer" id="accuracy-note">⚠ ตัวแปลงนี้ใช้การเดาจากรูปแบบตัวอักษร ไม่ได้ใช้พจนานุกรม จึงอาจแปลงผิดพลาดได้ โดยเฉพาะข้อความที่ผสมไทย-อังกฤษหรือคำสั้นๆ กรุณาตรวจผลลัพธ์ก่อนนำไปใช้</p>
     <p class="disclaimer">This program is inspired from <a href="https://lullar-de-3.appspot.com/" target="_blank" rel="noopener">Lullar's</a> "de = กำ"</p>
   </div>
 </main>

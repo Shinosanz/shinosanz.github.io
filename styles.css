@@ -242,6 +242,8 @@ input::placeholder { color: rgba(255,255,255,0.35); }
   color: rgba(255,255,255,0.4);
 }
 
+.disclaimer + .disclaimer { margin-top: 8px; }
+
 .qr-box {
   background: #ffffff;
   border-radius: 12px;

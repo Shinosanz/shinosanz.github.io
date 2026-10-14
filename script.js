@@ -79,24 +79,56 @@ const TH_TO_EN = Object.fromEntries(
     .map(([en, th]) => [th, en])
 );
 
-let direction = 'en2th';
+// Thai letters outnumber Latin letters -> text was typed in Thai layout
+function detectDirection(text) {
+  const thai = (text.match(/[฀-๿]/g) || []).length;
+  const latin = (text.match(/[A-Za-z]/g) || []).length;
+  return thai > latin ? 'th2en' : 'en2th';
+}
 
 function convertText(input, dir) {
   const map = dir === 'th2en' ? TH_TO_EN : EN_TO_TH;
   return Array.from(input, (c) => map[c] || c).join('');
 }
 
-function translateAndDisplay() {
-  const out = convertText(document.getElementById('changelang').value, direction);
-  document.getElementById('translatedText').textContent = out;
-  document.getElementById('copy-button').style.visibility = out ? 'visible' : 'hidden';
+// A real Thai word can't: start with a vowel/tone mark, end with a leading vowel,
+// put a mark right after a leading vowel / ะาำ, or stack vowels / tone marks
+// ponytail: heuristic, no dictionary - see the letters-only rule in convertMixed for its ceiling
+const looksBroken = (w) =>
+  /^[ะัาำิีึืฺุู็่้๊๋์ํๅๆฯ]|[เแโใไ]$|[เแโใไ][^ก-ฮเแ]|[ะาำๅ][ัิีึืฺุู็่้๊๋์ํ]|[ัิีึืฺุู็่้๊๋์ํ][ัิีึืฺุู]|[่้๊๋][่้๊๋็์ํ]/.test(w);
+
+// Mixed = Thai next to Latin letters, or Thai words that are a mix of broken and fine
+function isMixed(text) {
+  const thaiWords = text.split(/\s+/).filter((w) => /[฀-๿]/.test(w));
+  if (!thaiWords.length) return false;
+  return /[A-Za-z]/.test(text) || (thaiWords.some(looksBroken) && !thaiWords.every(looksBroken));
 }
 
-function toggleDirection() {
-  direction = direction === 'en2th' ? 'th2en' : 'en2th';
-  document.getElementById('swap-button').textContent =
-    direction === 'en2th' ? 'EN → TH' : 'TH → EN';
-  translateAndDisplay();
+// Mixed text: decide per word instead of for the whole line
+function convertMixed(text) {
+  const hasLatin = /[A-Za-z]/.test(text);
+  return text.split(/(\s+)/).map((w) => {
+    if (/[฀-๿]/.test(w)) {
+      const en = convertText(w, 'th2en');
+      // No real English in the line: English typed in the Thai layout has some words that look
+      // like valid Thai by luck. Real Thai almost always reads back with digits/punctuation
+      // (สวัสดี -> l;ylfu), so a letters-only reading is treated as mistyped English too.
+      // ponytail: Thai words made only of letter keys (ที่, ไป) get flipped in such lines
+      return looksBroken(w) || (!hasLatin && /^[a-z]+$/i.test(en)) ? en : w;
+    }
+    if (!/[A-Za-z]/.test(w)) return w; // numbers/punctuation stay as typed
+    const th = convertText(w, 'en2th');
+    return looksBroken(th) ? w : th;
+  }).join('');
+}
+
+function translateAndDisplay() {
+  const text = document.getElementById('changelang').value;
+  const mixed = isMixed(text);
+  const dir = detectDirection(text);
+  const out = mixed ? convertMixed(text) : convertText(text, dir);
+  document.getElementById('translatedText').textContent = out;
+  document.getElementById('copy-button').style.visibility = out ? 'visible' : 'hidden';
 }
 
 // CopyText
